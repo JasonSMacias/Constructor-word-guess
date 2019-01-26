@@ -1,12 +1,13 @@
 
 
-function Letter(letter, guessed){
+function Letter(letter, TorF){
   this.letterGuessed = letter;
-  this.wasGuessed = guessed;
+  this.wasGuessed = TorF;
 };
 Letter.prototype.getLetter = function(){
-  if (this.wasGuessed = true){
-    return letter;
+
+  if (this.wasGuessed === true){
+    return this.letterGuessed;
   }
   else {
     return "_";
@@ -15,7 +16,12 @@ Letter.prototype.getLetter = function(){
 Letter.prototype.charCompare = function(character){
   if (character === this.letterGuessed) {
     this.wasGuessed = true;
+    
+  }
+  else {
+    this.wasGuessed = false;
   };
+  console.log(this.wasGuessed);
 };
 
 

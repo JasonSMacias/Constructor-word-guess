@@ -4,9 +4,10 @@ var targetWordList = ["Williamsburg", "Tumblr", "gastropub", "mumblecore", "fash
 
 // setting up inquirer
 var inquirer = require('inquirer');
+
+// requring "Letter" constructor from letter.js
 var Letter = require("./letter.js");
-let newVar = new Letter("a", false);
-console.log(newVar);
+
 // setting variables
   let lettersGuessed = [];
   let guessesRemaining = 9;
@@ -63,7 +64,7 @@ const startPlay = function(){
   let validGuesses = alphabet;
 
   inquirer.prompt([
-    // Here we create a basic text prompt.
+    // Invite player to choose letter
     {
       type: "list",
       message: "Choose a letter.",
@@ -72,15 +73,18 @@ const startPlay = function(){
     }
   ]).then(function(inquirerResponse) {
     let letter = inquirerResponse;
-  console.log(inquirerResponse.letter);
+    console.log(inquirerResponse.letter);
 
-  guessesRemaining--;
+
+
+    guessesRemaining--;
   
-  if (guessesRemaining=0){
-    console.log("Sorry, you didn't get that one.  The word was " + targetWord);
-    quitPrompt();
-  };
+    if (guessesRemaining=0){
+      console.log("Sorry, you didn't get that one.  The word was " + targetWord);
+      quitPrompt();
+    };
   });
 };
-
+module.exports.targetWord = targetWord;
+module.exports.targetWordLetters = targetWordLetters;
 startPlay();
