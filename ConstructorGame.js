@@ -4,6 +4,9 @@ var targetWordList = ["Williamsburg", "Tumblr", "gastropub", "mumblecore", "fash
 
 // setting up inquirer
 var inquirer = require('inquirer');
+var Letter = require("./letter.js");
+let newVar = new Letter("a", false);
+console.log(newVar);
 // setting variables
   let lettersGuessed = [];
   let guessesRemaining = 9;

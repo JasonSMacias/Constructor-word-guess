@@ -1,3 +1,5 @@
+
+
 function Letter(letter, guessed){
   this.letterGuessed = letter;
   this.wasGuessed = guessed;
@@ -5,7 +7,7 @@ function Letter(letter, guessed){
 Letter.prototype.getLetter = function(){
   if (this.wasGuessed = true){
     return letter;
-  };
+  }
   else {
     return "_";
   };
@@ -15,3 +17,6 @@ Letter.prototype.charCompare = function(character){
     this.wasGuessed = true;
   };
 };
+
+
+module.exports = Letter;
